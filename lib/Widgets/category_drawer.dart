@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 class CategoryDrawer extends StatefulWidget {
   const CategoryDrawer({Key? key}) : super(key: key);
 
@@ -25,8 +26,16 @@ class _CategoryDrawerState extends State<CategoryDrawer> {
                 SizedBox(
                   height: 5.0,
                 ),
-                Text('Kalind Koirala', style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.normal, fontWeight: FontWeight.bold),),
-                Text('Project Defense', style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.normal, fontWeight: FontWeight.normal),),
+                Text('Kalind Koirala', style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold),
+                ),),
+                Text('Project Defense', style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.normal),
+                ),),
               ],
             ),
           ),
@@ -36,28 +45,44 @@ class _CategoryDrawerState extends State<CategoryDrawer> {
         ),
         ListTile(
           leading: Icon(Icons.person, color: Colors.black,),
-          title: Text('Your Profile'),
+          title: Text('Your Profile', style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: 14.0,
+                fontWeight: FontWeight.normal),
+          ),),
           onTap: (){
 
           },
         ),
         ListTile(
           leading: Icon(Icons.mail, color: Colors.black,),
-          title: Text('Inbox'),
+          title: Text('Inbox', style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: 14.0,
+                fontWeight: FontWeight.normal),
+          ),),
           onTap: (){
 
           },
         ),
         ListTile(
           leading: Icon(Icons.assessment, color: Colors.black,),
-          title: Text('Dashboard'),
+          title: Text('Dashboard', style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: 14.0,
+                fontWeight: FontWeight.normal),
+          ),),
           onTap: (){
 
           },
         ),
         ListTile(
           leading: Icon(Icons.settings, color: Colors.black,),
-          title: Text('Settings'),
+          title: Text('Settings', style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: 14.0,
+                fontWeight: FontWeight.normal),
+          ),),
           onTap: (){
 
           },

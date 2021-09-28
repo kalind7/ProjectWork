@@ -20,14 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    // appBar: AppBar(
-    //   leading: IconButton(
-    //     onPressed: (){},
-    //     icon: Icon(Icons.account_box),
-    //     iconSize: 25.0,
-    //   ),
-    //   title: Center(child: Text('Project Work')),
-    // ),
       drawer: Drawer(
         child: CategoryDrawer(),
       ),
@@ -38,8 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           HeadLiner(),
 
-
-          SizedBox(height: 10,),
+          SizedBox(height: 8.0),
 
           TextFieldss(),
 
@@ -47,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           TextImage(),
 
-          SizedBox(height: 10.0,),
+          SizedBox(height: 24.0,),
 
           CategoryHotel(),
 

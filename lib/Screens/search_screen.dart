@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:project_work/Widgets/headliner.dart';
 import 'package:project_work/Widgets/rating_star.dart';
 import 'package:project_work/Widgets/text_field.dart';
+import 'package:project_work/controller/hotel_controller.dart';
+
 class SearchScreen extends StatefulWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+  final hotelController = Get.put(HotelController());
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
@@ -12,26 +17,82 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   Widget _buildPopupDialog(BuildContext context) {
-    return  AlertDialog(
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
       backgroundColor: Colors.white,
-      title: Center(child:  Text('Total Payment', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),)),
-      content:  Column(
+      title: Center(
+          child: Text(
+        'Total Payment',
+        style: GoogleFonts.montserrat(
+          textStyle: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+      )),
+      content: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-           Center(child: Text("55", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Colors.purple),)),
+          Padding(
+            padding: const EdgeInsets.only(right: 14.0),
+            child: Text(
+              '\$55.00',
+              style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                      color: HexColor("#7459DC"),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold)),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 5.0),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.check_box_outline_blank),
+                ),
+                Flexible(
+                  child: Text(
+                    'I agree to the terms of services.',
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          color: HexColor('#9C9C9C'),
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
       actions: <Widget>[
-         Center(
-           child: ElevatedButton(
-
+        SizedBox(
+          // height: 35.0,
+          width: double.infinity,
+          child: ElevatedButton(
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child:  Text('Close',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),),
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              primary: HexColor("#04212D"), // background
+            ),
+            child: Text(
+              'Pay',
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
         ),
-         ),
       ],
     );
   }
@@ -41,93 +102,146 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: (){
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back),
-            iconSize: 25.0,
-          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+          iconSize: 25.0,
+        ),
       ),
       body: ListView(
+        shrinkWrap: true,
         scrollDirection: Axis.vertical,
-
-       children: <Widget> [
-         HeadLiner(),
-
-
-
-         Padding(
-           padding: const EdgeInsets.only(top: 10.0, left: 15.0, bottom: 20.0),
-           child: Text('Search For House', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, letterSpacing: 0.2),),
-         ),
-
-         TextFieldss(),
-
-         SizedBox(height: 15.0,),
-
-         Padding(
-           padding: const EdgeInsets.only(top: 8.0, left: 15.0, bottom: 20.0),
-           child: Text('Result For Cox\u0027s  Bazar', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, letterSpacing: 0.2),),
-         ),
-
-         SafeArea(
-             child: SingleChildScrollView(
-               scrollDirection: Axis.vertical,
-               child: Container(
-                 margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                 decoration: BoxDecoration(
-                   borderRadius: BorderRadius.circular(15.0),
-                   color: Colors.white,
-                   border: Border.all(width: 1.0, color: Colors.grey),
-                 ),
-
-                 child: Row(
-                   children: [
-                     ClipRRect(
-                       borderRadius: BorderRadius.circular(15.0),
-                       child: GestureDetector(
-                         onTap: (){
-                           showDialog(
-                               context: context,
-                               builder: (BuildContext context) => _buildPopupDialog(context),
-                           );
-                         },
-                         child: Hero(
-                           tag: AssetImage('images/3.jpg'),
-                           child: Image(
-                             height: 150,
-                             width: 150,
-                             fit: BoxFit.cover,
-                             image: AssetImage('images/3.jpg'),
-                           ),
-                         ),
-                       ),
-                     ),
-                     Flexible(
-                       child: Container(
-                         margin: EdgeInsets.all(10.0),
-                         child: Column(
-                           mainAxisAlignment: MainAxisAlignment.center,
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text('Muscat Holiday Resort',overflow: TextOverflow.visible, style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),),
-                             SizedBox(height: 4.0),
-
-
-                             RatingStar(stars: 5),
-                             SizedBox(height: 4),
-                             Text('18% less than ususal ',  style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal),),
-                             SizedBox(height: 4.0),
-                           ],
-                         ),
-                       ),
-                     ),
-                   ],
-                 ),
-               ),
-             ),
-         ),
-       ],
+        children: <Widget>[
+          HeadLiner(),
+          Padding(
+            padding: const EdgeInsets.only(top: 23.7, left: 24.0),
+            child: Text(
+              'Search For House',
+              style: GoogleFonts.montserrat(
+                textStyle:
+                    TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          SizedBox(height: 24.0),
+          TextFieldss(),
+          SizedBox(
+            height: 42.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 26.0, bottom: 24.0),
+            child: Row(
+              children: [
+                Text(
+                  'Result For ',
+                  style: GoogleFonts.montserrat(
+                    textStyle: TextStyle(
+                        fontSize: 20.0, fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Text(
+                  'Cox\u0027s Bazar',
+                  style: GoogleFonts.montserrat(
+                    textStyle:
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              GetX<HotelController>(
+                builder: (controller) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemCount: controller.searchList.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 20.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          color: HexColor("#F4F4F4"),
+                        ),
+                        child: Row(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(5.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        _buildPopupDialog(context),
+                                  );
+                                },
+                                child: Hero(
+                                  tag: AssetImage(
+                                      '${controller.searchList[index].image1}'),
+                                  child: Image(
+                                    height: 112,
+                                    width: 95,
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                        '${controller.searchList[index].image1}'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: Container(
+                                margin:
+                                    EdgeInsets.only(left: 12.0, bottom: 20.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '${controller.searchList[index].title}',
+                                      overflow: TextOverflow.visible,
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                    SizedBox(height: 4.0),
+                                    RatingStar(stars: 5),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      '${controller.searchList[index].description} ',
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                    ),
+                                    SizedBox(height: 4.0),
+                                    Text(
+                                      '${controller.searchList[index].button}',
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

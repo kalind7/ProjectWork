@@ -9,6 +9,6 @@ class RatingStar extends StatelessWidget {
     for(int i=1 ; i<stars; i++){
       star = star+"⭐";
     }
-    return Text(star, style: TextStyle(fontSize: 20.0),);
+    return Text(star, style: TextStyle(fontSize: 10.0),);
   }
 }

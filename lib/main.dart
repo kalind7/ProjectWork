@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // title: 'Project Work',
-      theme: ThemeData(
+      title: 'Waayu Project',
+      theme: ThemeData( fontFamily: 'GoogleFonts.montserrat',
         scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.grey,
       ),
