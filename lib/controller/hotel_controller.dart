@@ -19,28 +19,28 @@ class HotelController extends GetxController {
           image1: 'images/5.jpg',
           title: 'Modern',
           description: 'More than 504,326 House waiting for your rent or buy.',
-          button: 'from \$ 300/month',
+          button: 'from \$300/month',
          // icon: 'icon',
       ),
       HotelDetails(
         image1: 'images/15.jpg',
         title: 'Classic',
         description: 'More than 504,326 House waiting for your rent or buy.',
-        button: 'from \$ 300/month',
+        button: 'from \$300/month',
 
       ),
       HotelDetails(
         image1: 'images/3.jpg',
         title: 'SKYSCRAPER',
         description: 'More than 504,326 House waiting for your rent or buy.',
-        button: 'from \$ 300/month',
+        button: 'from \$300/month',
        // icon: 'icon',
       ),
       HotelDetails(
         image1: 'images/13.jpg',
         title: 'VILLA',
         description: 'More than 504,326 House waiting for your rent or buy.',
-        button: 'from \$ 300/month',
+        button: 'from \$300/month',
        // icon: 'icon',
       ),
     ];
@@ -49,25 +49,25 @@ class HotelController extends GetxController {
         image1: 'images/5.jpg',
         title: 'Muscat Holiday Resort',
         description: '18% less then usual.',
-        button: 'from \$ 16/month',
+        button: 'from \$16/month',
       ),
       HotelDetails(
         image1: 'images/15.jpg',
         title: 'Muscat Holiday Resort',
         description: '18% less then usual.',
-        button: 'from \$ 16/month',
+        button: 'from \$16/month',
       ),
       HotelDetails(
         image1: 'images/3.jpg',
         title: 'Muscat Holiday Resort',
         description: '18% less then usual.',
-        button: 'from \$ 16/month',
+        button: 'from \$16/month',
       ),
       HotelDetails(
         image1: 'images/4.jpg',
         title: 'Muscat Holiday Resort',
         description: '18% less then usual.',
-        button: 'from \$ 16/month',
+        button: 'from \$16/month',
       ),
     ];
     hotelList.value =  newlist;

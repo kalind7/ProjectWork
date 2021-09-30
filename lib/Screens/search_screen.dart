@@ -215,6 +215,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                       '${controller.searchList[index].description} ',
                                       style: GoogleFonts.montserrat(
                                         textStyle: TextStyle(
+                                          color: HexColor("#9C9C9C"),
                                             fontSize: 14.0,
                                             fontWeight: FontWeight.normal),
                                       ),
