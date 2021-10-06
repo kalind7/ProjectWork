@@ -61,6 +61,17 @@ class _CategoryHotelState extends State<CategoryHotel> {
                 color: Colors.white,
                 border: Border.all(color: Colors.white, width: 1.0),
                 borderRadius: BorderRadius.circular(5.0),
+
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(.05),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(4, 3), // changes position of shadow
+
+                    )
+                  ]
+
               ),
               padding: EdgeInsets.symmetric(horizontal: 18.0),
               child: GetX<HotelController>(
@@ -77,6 +88,17 @@ class _CategoryHotelState extends State<CategoryHotel> {
                           color: Colors.white,
                           border: Border.all(color: HexColor("#F4F4F4")),
                           borderRadius: BorderRadius.circular(5.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(.05),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: Offset(4, 3), // changes position of shadow
+
+                              )
+                            ]
+
+
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),

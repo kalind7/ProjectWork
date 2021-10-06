@@ -5,6 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:project_work/Widgets/category.dart';
 import 'package:project_work/Widgets/category_drawer.dart';
 import 'package:project_work/Widgets/headliner.dart';
+import 'package:project_work/Widgets/horizontal_scrollable_hotels.dart';
 import 'package:project_work/Widgets/text_over_images.dart';
 
 import '../Widgets/text_field.dart';
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: 10.0,),
 
-
+          TabBarDemo(),
         ],
       ),
     );

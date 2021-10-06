@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:project_work/models/hotel_details.dart';
 
 class HotelController extends GetxController {
   var hotelList = <HotelDetails>[].obs;
   var searchList = <HotelDetails>[].obs;
+  var newList = <HotelDetails>[].obs;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -70,7 +70,34 @@ class HotelController extends GetxController {
         button: 'from \$16/month',
       ),
     ];
+   var thirdList = [
+   HotelDetails(
+     image1: 'images/5.jpg',
+     title: 'Prime Park Hotel',
+     description: 'Plot 58, Block C Hotel Motel Zone',
+     button: '65% Off',
+   ),
+    HotelDetails(
+    image1: 'images/15.jpg',
+    title: 'Jol Torongo',
+    description: "Laboni Beach, Cox's Bazar",
+    button: '65% Off',
+    ),
+    HotelDetails(
+    image1: 'images/3.jpg',
+    title: 'Beach View Resort',
+    description: 'Gaushala , Ktm',
+    button: '65% Off',
+    ),
+    HotelDetails(
+    image1: 'images/4.jpg',
+    title: 'Ocean Paradise',
+    description: "Laboni Beach, Cox's Bazar",
+    button: '65% Off',
+    ),
+    ];
     hotelList.value =  newlist;
     searchList.value = secondList;
+    newList.value = thirdList;
   }
 }

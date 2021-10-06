@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project_work/Screens/new_page.dart';
+// import 'package:project_work/Screens/new_page.dart';
 import 'package:project_work/assets/pw_icons.dart';
 import 'package:project_work/assets/pw_icons3.dart';
 
@@ -17,13 +20,21 @@ class HeadLiner extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(5.0),
-                  child: const Image(
-                    height: 47.0,
-                    width: 47.0,
-                    fit: BoxFit.cover,
-                    image: AssetImage('images/12.jpg'),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NewPage()),
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(5.0),
+                    child: const Image(
+                      height: 47.0,
+                      width: 47.0,
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/12.jpg'),
+                    ),
                   ),
                 ),
                 Expanded(

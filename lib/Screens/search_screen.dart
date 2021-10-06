@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:project_work/Widgets/headliner.dart';
-import 'package:project_work/Widgets/rating_star.dart';
+// import 'package:project_work/Widgets/rating_star.dart';
 import 'package:project_work/Widgets/text_field.dart';
 import 'package:project_work/controller/hotel_controller.dart';
 
@@ -168,73 +168,116 @@ class _SearchScreenState extends State<SearchScreen> {
                         ),
                         child: Row(
                           children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(5.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) =>
-                                        _buildPopupDialog(context),
-                                  );
-                                },
-                                child: Hero(
-                                  tag: AssetImage(
-                                      '${controller.searchList[index].image1}'),
-                                  child: Image(
-                                    height: 112,
-                                    width: 95,
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        '${controller.searchList[index].image1}'),
-                                  ),
-                                ),
-                              ),
+                        ClipRRect(
+                        borderRadius: BorderRadius.circular(5.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  _buildPopupDialog(context),
+                            );
+                          },
+                          child: Hero(
+                            tag: AssetImage(
+                                '${controller.searchList[index].image1}'),
+                            child: Image(
+                              height: 112,
+                              width: 95,
+                              fit: BoxFit.cover,
+                              image: AssetImage(
+                                  '${controller.searchList[index].image1}'),
                             ),
-                            Flexible(
-                              child: Container(
-                                margin:
-                                    EdgeInsets.only(left: 12.0, bottom: 20.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '${controller.searchList[index].title}',
-                                      overflow: TextOverflow.visible,
-                                      style: GoogleFonts.montserrat(
-                                        textStyle: TextStyle(
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    SizedBox(height: 4.0),
-                                    RatingStar(stars: 5),
-                                    SizedBox(height: 4),
-                                    Text(
-                                      '${controller.searchList[index].description} ',
-                                      style: GoogleFonts.montserrat(
-                                        textStyle: TextStyle(
-                                          color: HexColor("#9C9C9C"),
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.normal),
-                                      ),
-                                    ),
-                                    SizedBox(height: 4.0),
-                                    Text(
-                                      '${controller.searchList[index].button}',
-                                      style: GoogleFonts.montserrat(
-                                        textStyle: TextStyle(
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.normal),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
+                      ),
+                      Flexible(
+                      child: Container(
+                      margin:
+                      EdgeInsets.only(left: 12.0, bottom: 20.0),
+                      child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                      Text(
+                      '${controller.searchList[index].title}',
+                      overflow: TextOverflow.visible,
+                      style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold),
+                      ),
+                      ),
+                      SizedBox(height: 4.0),
+                      Container(
+                      child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                      Icon(
+                      Icons.king_bed_outlined,
+                      color: Color(0xff8a8a8a),
+                      ),
+                      SizedBox(
+                      width: 3.0,
+                      ),
+                      Text("4",
+                      style: TextStyle(
+                      color: Color(0xff8a8a8a))),
+                      SizedBox(
+                      width: 10.0,
+                      ),
+                      Icon(
+                      Icons.pool_outlined,
+                      color: Color(0xff8a8a8a),
+                      ),
+                      SizedBox(
+                      width: 3.0,
+                      ),
+                      Text("1",
+                      style: TextStyle(
+                      color: Color(0xff8a8a8a))),
+                      SizedBox(
+                      width: 10.0,
+                      ),
+                      Icon(
+                      Icons.bathtub_outlined,
+                      color: Color(0xff8a8a8a),
+                      ),
+                      SizedBox(
+                      width: 3.0,
+                      ),
+                      Text("2",
+                      style: TextStyle(
+                      color: Color(0xff8a8a8a))),
+                      ],
+                      ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                      '${controller.searchList[index].description} ',
+                      style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                      color: HexColor("#9C9C9C"),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.normal),
+                      ),
+                      ),
+                      SizedBox(height: 4.0),
+                      Text(
+                      '${controller.searchList[index].button}',
+                      style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.normal),
+                      ),
+                      ),
+                      ],
+                      ),
+                      ),
+                      ),
+                      ],
+                      ),
+
                       );
                     },
                   );
