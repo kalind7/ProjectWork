@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:project_work/Screens/search_screen.dart';
 import 'package:project_work/Widgets/bottomsheet.dart';
+import 'package:project_work/Widgets/horizontal_scrollable_hotels.dart';
 import 'package:project_work/controller/hotel_controller.dart';
 
 class CategoryHotel extends StatefulWidget {
@@ -231,6 +232,9 @@ class _CategoryHotelState extends State<CategoryHotel> {
             ),
           ],
         ),
+
+
+        TabBarDemo(),
       ],
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project_work/Screens/location_screen.dart';
 import 'package:project_work/assets/pw_icons4.dart';
 import 'package:project_work/assets/pw_icons5.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -62,7 +62,12 @@ class TextFieldss extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(right:12.0),
               child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LocationScreen()),
+                    );
+                  },
                   icon: Icon(
                     PWIcons5.logo6,
                     size: 24,
