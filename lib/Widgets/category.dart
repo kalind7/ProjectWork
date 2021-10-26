@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:project_work/Screens/api_screen.dart';
 import 'package:project_work/Screens/search_screen.dart';
 import 'package:project_work/Widgets/bottomsheet.dart';
-import 'package:project_work/Widgets/horizontal_scrollable_hotels.dart';
+import 'package:project_work/Widgets/new_tabbar.dart';
 import 'package:project_work/controller/hotel_controller.dart';
 
 class CategoryHotel extends StatefulWidget {
@@ -44,7 +45,9 @@ class _CategoryHotelState extends State<CategoryHotel> {
                 ),
               ),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ApiScreen() ));
+                  },
                   icon: Image.asset('images/Dots.jpg')
               ),
             ],
@@ -232,6 +235,7 @@ class _CategoryHotelState extends State<CategoryHotel> {
             ),
           ],
         ),
+
 
 
         TabBarDemo(),

@@ -9,13 +9,14 @@ class TabBarDemo extends StatelessWidget {
 
   final hotelController = Get.put(HotelController());
 
-
+  
   @override
   Widget build(BuildContext context) {
     return  Column(
+      verticalDirection: VerticalDirection.down,
       children: [
-      Container(
-      height: 30,
+    Container(
+      height:30,
       margin: EdgeInsets.only(left: 14.4, right: 0.8),
       child: DefaultTabController(
         length: 5,
@@ -87,7 +88,9 @@ class TabBarDemo extends StatelessWidget {
 
 
 
+
         Column(
+          verticalDirection: VerticalDirection.down,
           children: [
             GetX<HotelController>(
               builder: (controller) {
@@ -233,6 +236,7 @@ class TabBarDemo extends StatelessWidget {
                 );
               },
             ),
+
           ],
         ),
       ],

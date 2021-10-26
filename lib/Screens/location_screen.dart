@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_work/Widgets/horizontal_scrollable_hotels.dart';
+import 'package:project_work/Widgets/new_tabbar.dart';
 
 class LocationScreen extends StatelessWidget {
   const LocationScreen({Key? key}) : super(key: key);
@@ -42,17 +42,6 @@ class LocationScreen extends StatelessWidget {
           ),
       ],
     ),
-
-
-
-              // Center(child:  IconButton(
-              //     onPressed: () {},
-              //     icon: Image.asset('images/Slide.png')
-              // ),),
-
-
-
-
     ],
     ),
     );

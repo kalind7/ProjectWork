@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       body: ListView(
-        // scrollDirection: Axis.vertical,
+
         children: [
 
           HeadLiner(),
